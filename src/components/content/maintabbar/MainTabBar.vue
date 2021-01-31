@@ -27,7 +27,7 @@
         <img src="~assets/img/tabbar/shopcart.svg" />
       </template>
       <template v-slot:item-icon-active>
-        <img src="~assets/img/tabbar/shopcart.svg" />
+        <img src="~assets/img/tabbar/shopcart_active.svg" />
       </template>
       <template v-slot:item-text>
         <div>购物车</div>
@@ -38,7 +38,7 @@
         <img src="~assets/img/tabbar/profile.svg" />
       </template>
       <template v-slot:item-icon-active>
-        <img src="~assets/img/tabbar/profile.svg" />
+        <img src="~assets/img/tabbar/profile_active.svg" />
       </template>
       <template v-slot:item-text>
         <div>我的</div>
