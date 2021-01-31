@@ -29,7 +29,12 @@ export default {
   data () {
     return {
       recommends: [],
-      banners: []
+      banners: [],
+      goods: {
+        pop: { page: 0, list: [] },
+        new: { page: 0, list: [] },
+        sell: { page: 0, list: [] }
+      }
     }
   },
   methods: {
@@ -38,12 +43,18 @@ export default {
         this.banners = res.data.banner.list
         this.recommends = res.data.recommend.list
       })
+    },
+    getHomeGoods1 () {
+      getHomeGoods('pop', 1).then((res) => {
+        console.log(res)
+      })
     }
   },
   created () {
     // 请求多个数据
     this.getHomeMultidata1()
     // 请求商品数据
+    this.getHomeGoods1()
   }
 }
 </script>
