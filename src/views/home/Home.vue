@@ -1,7 +1,9 @@
 <template>
   <div id="home">
     <NavBar class="home-nav"><template v-slot:center><div>购物街</div></template></NavBar>
-    <HomeSwiper :banners="banners"></HomeSwiper>
+    <HomeSwiper :banners="banners" />
+    <RecommendView :recommends="recommends"/>
+    <FeatureView/>
   </div>
 </template>
 
@@ -9,13 +11,17 @@
 import NavBar from '@/components/common/navbar/NavBar.vue'
 
 import HomeSwiper from './childComp/HomeSwiper'
+import RecommendView from './childComp/RecommendView'
+import FeatureView from './childComp/FeatureView'
 
 import { getHomeMultidata } from '@/network/home'
 export default {
   name: 'Home',
   components: {
     NavBar,
-    HomeSwiper
+    HomeSwiper,
+    RecommendView,
+    FeatureView
   },
   data () {
     return {
