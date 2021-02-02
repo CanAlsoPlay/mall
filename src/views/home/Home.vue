@@ -4,7 +4,22 @@
     <HomeSwiper :banners="banners" />
     <RecommendView :recommends="recommends"/>
     <FeatureView/>
-    <TabControl class="tab-control" :titles="['流行', '新款', '精选']" />
+    <TabControl class="tab-control" :titles="['综合', '销量', '新品']" />
+    <ul>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+      <li>3333333333333</li>
+    </ul>
   </div>
 </template>
 
@@ -16,7 +31,7 @@ import HomeSwiper from './childComp/HomeSwiper'
 import RecommendView from './childComp/RecommendView'
 import FeatureView from './childComp/FeatureView'
 
-import { getHomeMultidata } from '@/network/home'
+import { getHomeMultidata, getHomeGoods } from '@/network/home'
 export default {
   name: 'Home',
   components: {
@@ -32,8 +47,8 @@ export default {
       banners: [],
       goods: {
         pop: { page: 0, list: [] },
-        new: { page: 0, list: [] },
-        sell: { page: 0, list: [] }
+        sell: { page: 0, list: [] },
+        new: { page: 0, list: [] }
       }
     }
   },
@@ -44,9 +59,12 @@ export default {
         this.recommends = res.data.recommend.list
       })
     },
-    getHomeGoods1 () {
-      getHomeGoods('pop', 1).then((res) => {
-        console.log(res)
+    getHomeGoods1 (type) {
+      const page = this.goods[type].page + 1
+      getHomeGoods(type, page).then((res) => {
+        const data = res.list[0].result.wall.docs
+        this.goods[type].list.push(data)
+        this.goods[type].page += 1
       })
     }
   },
@@ -54,7 +72,7 @@ export default {
     // 请求多个数据
     this.getHomeMultidata1()
     // 请求商品数据
-    this.getHomeGoods1()
+    this.getHomeGoods1('pop')
   }
 }
 </script>

@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path:'/',
+    path: '/',
     redirect: '/home'
   },
   {
@@ -26,7 +26,7 @@ const routes = [
     path: '/shopcart',
     name: 'ShopCart',
     component: () => import('../views/shopcart/ShopCart.vue')
-  },{
+  }, {
     path: '/profile',
     name: 'Profile',
     component: () => import('../views/profile/Profile.vue')

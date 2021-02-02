@@ -1,5 +1,5 @@
 <template>
-  <TabBar>
+  <TabBar class="tab-bar">
     <TabBarItem path="/home">
       <template v-slot:item-icon>
         <img src="~assets/img/tabbar/home.svg" />
@@ -58,3 +58,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.tab-bar {
+  width: 100vw;
+}
+</style>
