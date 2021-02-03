@@ -59,7 +59,5 @@ export default {
 }
 </script>
 <style scoped>
-.tab-bar {
-  width: 100vw;
-}
+
 </style>

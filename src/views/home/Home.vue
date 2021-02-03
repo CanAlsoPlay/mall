@@ -5,7 +5,7 @@
     <RecommendView :recommends="recommends"/>
     <FeatureView/>
     <TabControl class="tab-control" :titles="['综合', '销量', '新品']" />
-    <ul>
+    <ul class="list">
       <li>3333333333333</li>
       <li>3333333333333</li>
       <li>3333333333333</li>
@@ -92,5 +92,8 @@ export default {
 .tab-control {
   position: sticky;
   top: 44px;
+}
+ul.list {
+  margin-bottom: 55px;
 }
 </style>

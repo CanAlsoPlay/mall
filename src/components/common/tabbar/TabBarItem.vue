@@ -44,6 +44,7 @@ export default {
   .tabbar-item img{
     width: 24px;
     height: 24px;
+    margin-top: 4px;
     vertical-align: middle;
   }
   .active{

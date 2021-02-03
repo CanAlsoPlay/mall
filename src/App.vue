@@ -16,7 +16,4 @@ export default {
 </script>
 <style scoped>
   @import "assets/css/base.css";
-.app {
-  width: 100vw;
-}
 </style>
