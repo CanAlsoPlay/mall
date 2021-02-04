@@ -1,7 +1,4 @@
 @import "./normalize.css";
-body {
-    background-color: lightblue;
-}
 
 :root {
     --color-text: #666;

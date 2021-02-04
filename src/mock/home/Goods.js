@@ -1,5 +1,7 @@
 import Mock from 'mockjs'
 import { pop1 } from './pop/pop1'
+import { sell1 } from './sell/sell1'
+import { new1 } from './new/new1'
 // 根据url获取query参数
 function getQuery (url, name) {
   // console.log(url, name)
@@ -20,10 +22,25 @@ export default Mock.mock(/\/home\/data/, 'get', (options) => {
   // console.log(options)
   // 获取传递的参数pageIndex pageSize
   const page = getQuery(options.url, 'page')
-  console.log(page)
+  const type = getQuery(options.url, 'type')
+  console.log(page, type)
   const list = []
-  list.push(pop1)
-  console.log(list)
+  switch (type) {
+    case 'pop':
+      list.push(pop1)
+      console.log(list)
+      break
+    case 'sell':
+      list.push(sell1)
+      console.log(list)
+      break
+    case 'new':
+      list.push(new1)
+      console.log(list)
+      break
+    default:
+      break
+  }
   return {
     status: 200,
     message: '获取成功',

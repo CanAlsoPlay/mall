@@ -4,7 +4,9 @@
     <HomeSwiper :banners="banners" />
     <RecommendView :recommends="recommends"/>
     <FeatureView/>
-    <TabControl class="tab-control" :titles="['综合', '销量', '新品']" />
+    <TabControl class="tab-control"
+        @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
+    <goods-list :goods="goods[currentType].list[0]"/>
     <ul class="list">
       <li>3333333333333</li>
       <li>3333333333333</li>
@@ -26,6 +28,7 @@
 <script>
 import NavBar from '@/components/common/navbar/NavBar.vue'
 import TabControl from '@/components/content/tabControl/TabControl.vue'
+import GoodsList from '@/components/content/goods/GoodsList.vue'
 
 import HomeSwiper from './childComp/HomeSwiper'
 import RecommendView from './childComp/RecommendView'
@@ -39,7 +42,8 @@ export default {
     HomeSwiper,
     RecommendView,
     FeatureView,
-    TabControl
+    TabControl,
+    GoodsList
   },
   data () {
     return {
@@ -49,10 +53,27 @@ export default {
         pop: { page: 0, list: [] },
         sell: { page: 0, list: [] },
         new: { page: 0, list: [] }
-      }
+      },
+      currentType: 'pop'
     }
   },
   methods: {
+    tabClick (index) {
+      switch (index) {
+        case 0:
+          this.currentType = 'pop'
+          break
+        case 1:
+          this.currentType = 'sell'
+          break
+        case 2:
+          this.currentType = 'new'
+          break
+        default:
+          break
+      }
+      this.getHomeGoods1(this.currentType)
+    },
     getHomeMultidata1 () {
       getHomeMultidata().then((res) => {
         this.banners = res.data.banner.list
@@ -63,6 +84,7 @@ export default {
       const page = this.goods[type].page + 1
       getHomeGoods(type, page).then((res) => {
         const data = res.list[0].result.wall.docs
+        // console.log(typeof data, data)
         this.goods[type].list.push(data)
         this.goods[type].page += 1
       })
