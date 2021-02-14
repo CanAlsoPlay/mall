@@ -15,6 +15,7 @@ export default {
     display: flex;
     background-color: #f6f6f6;
     position: fixed;
+    z-index: 999;
     bottom: 0;
     left: 0;
     right: 0;

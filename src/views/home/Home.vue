@@ -1,12 +1,15 @@
 <template>
   <div id="home">
     <NavBar class="home-nav"><template v-slot:center><div>购物街</div></template></NavBar>
-    <HomeSwiper :banners="banners" />
-    <RecommendView :recommends="recommends"/>
-    <FeatureView/>
-    <TabControl class="tab-control"
-        @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
-    <goods-list :goods="goods[currentType].list[0]"/>
+    <scroll>
+      <HomeSwiper :banners="banners" />
+      <RecommendView :recommends="recommends"/>
+      <FeatureView/>
+      <TabControl class="tab-control"
+          @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
+      <goods-list :goods="goods[currentType].list[0]"/>
+    </scroll>
+    <back-top @click.native="backClick"/>
     <ul class="list">
       <li>3333333333333</li>
       <li>3333333333333</li>
@@ -29,6 +32,8 @@
 import NavBar from '@/components/common/navbar/NavBar.vue'
 import TabControl from '@/components/content/tabControl/TabControl.vue'
 import GoodsList from '@/components/content/goods/GoodsList.vue'
+import Scroll from '@/components/common/scroll/Scroll.vue'
+import BackTop from '@/components/content/backTop/BackTop.vue'
 
 import HomeSwiper from './childComp/HomeSwiper'
 import RecommendView from './childComp/RecommendView'
@@ -43,7 +48,9 @@ export default {
     RecommendView,
     FeatureView,
     TabControl,
-    GoodsList
+    GoodsList,
+    Scroll,
+    BackTop
   },
   data () {
     return {
