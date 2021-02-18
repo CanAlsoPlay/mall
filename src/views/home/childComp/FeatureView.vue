@@ -12,8 +12,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.feature {
+  width: 100vw;
+}
 .feature img{
-  width:100%;
+  width:100vw;
 }
 </style>

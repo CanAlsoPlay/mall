@@ -1,5 +1,7 @@
 @import "./normalize.css";
-
+html {
+  overflow-y: scroll;
+}
 :root {
     --color-text: #666;
     --color-high-text: #ff5777;
@@ -7,8 +9,12 @@
     --color-background: #fff;
     --font-size: 18px;
     --line-height: 1.5;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
-
+:root body {
+  position: absolute;
+}
 *,
 *::before,
 *::after {
@@ -23,6 +29,8 @@ body {
     background: var(--color-background);
     color: var(--color-text);
     width: 100vw;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 a {

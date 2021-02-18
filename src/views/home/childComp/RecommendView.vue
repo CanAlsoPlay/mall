@@ -26,7 +26,7 @@ export default {
 <style>
 .recommend{
   display: flex;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   font-size: 16px;
   padding: 10px 0 20px 0;
