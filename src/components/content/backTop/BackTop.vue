@@ -13,7 +13,7 @@ export default {
 </script>
 
 <style scoped>
-.bacck-top {
+.back-top {
   position: fixed;
   right: 8px;
   bottom: 55px;

@@ -1,15 +1,16 @@
 <template>
   <div id="home">
     <NavBar class="home-nav"><template v-slot:center><div>购物街</div></template></NavBar>
-    <scroll>
+    <Scroll class="content" ref="scroll" :probe-type="3"
+      @scroll="contentScroll">
       <HomeSwiper :banners="banners" />
       <RecommendView :recommends="recommends"/>
       <FeatureView/>
       <TabControl class="tab-control"
           @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
       <goods-list :goods="goods[currentType].list[0]"/>
-    </scroll>
-    <back-top @click.native="backClick"/>
+    </Scroll>
+    <back-top @click.native="backClick" v-show="isShowBackTop"/>
     <ul class="list">
       <li>3333333333333</li>
       <li>3333333333333</li>
@@ -56,7 +57,8 @@ export default {
         sell: { page: 0, list: [] },
         new: { page: 0, list: [] }
       },
-      currentType: 'pop'
+      currentType: 'pop',
+      isShowBackTop: true
     }
   },
   methods: {
@@ -75,6 +77,13 @@ export default {
           break
       }
       this.getHomeGoods1(this.currentType)
+    },
+    backClick () {
+      console.log('backClick')
+      this.$refs.scroll.scrollTo(0, 0)
+    },
+    contentScroll (position) {
+      this.isShowBackTop = -position.y > 1000
     },
     getHomeMultidata1 () {
       getHomeMultidata().then((res) => {
@@ -119,5 +128,9 @@ export default {
 }
 ul.list {
   margin-bottom: 55px;
+}
+.content {
+  height: calc(100% - 93px);
+  overflow: hidden;
 }
 </style>
