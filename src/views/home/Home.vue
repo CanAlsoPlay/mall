@@ -106,9 +106,6 @@ export default {
         for (const iterator of data) {
           this.goods[type].list.push(iterator)
         }
-        // let fruitsObj = {...data}
-        // this.goods[type].list.push(data)
-        // console.log(typeof data, this.goods[type])
         this.goods[type].page += 1
         // 完成上拉加载更多
         this.$refs.scroll.finishPullUp()
