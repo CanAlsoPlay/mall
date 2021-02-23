@@ -137,10 +137,11 @@ export default {
   },
   activated () {
     this.$refs.scroll.scrollTo(0, this.saveY, 0)
+    this.$refs.scroll.refresh()
   },
   deactivated () {
     this.saveY = this.$refs.scroll.getScrollY()
-  }
+  },
   mounted () {
     // 监听图片加载完成
     this.$bus.$on('itemImageLoad', () => {

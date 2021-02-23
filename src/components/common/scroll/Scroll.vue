@@ -59,6 +59,9 @@ export default {
       // console.log(this.scroll)
       this.scroll && this.scroll.refresh()
       // console.log('refresh', this.scroll.scrollerHeight)
+    },
+    getScrollY () {
+      return this.scroll.y ? this.scroll.y : 0
     }
   }
 }
