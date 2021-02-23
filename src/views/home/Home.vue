@@ -1,12 +1,14 @@
 <template>
   <div id="home">
     <NavBar class="home-nav"><template v-slot:center><div>购物街</div></template></NavBar>
+    <TabControl class="tab-control2" ref="tabControl2" v-show="isTabFixed"
+          @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
     <Scroll class="content" ref="scroll" :probe-type="3"
       @scroll="contentScroll" :pull-up-load="true" @pullingUp="loadMore">
-      <HomeSwiper :banners="banners" />
+      <HomeSwiper :banners="banners" @swiperImageLoad="swiperImgLoad"/>
       <RecommendView :recommends="recommends"/>
       <FeatureView/>
-      <TabControl class="tab-control"
+      <TabControl class="tab-control" ref="tabControl"
           @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
       <goods-list :goods="goods[currentType].list"/>
       <ul class="list">
@@ -60,7 +62,10 @@ export default {
         new: { page: 0, list: [] }
       },
       currentType: 'pop',
-      isShowBackTop: true
+      isShowBackTop: true,
+      tabControlOffsetTop: 0,
+      isTabFixed: false,
+      saveY: 0
     }
   },
   methods: {
@@ -78,6 +83,8 @@ export default {
         default:
           break
       }
+      this.$refs.tabControl.currentIndex = index
+      this.$refs.tabControl2.currentIndex = index
       this.getHomeGoods1(this.currentType)
     },
     backClick () {
@@ -86,11 +93,16 @@ export default {
     },
     contentScroll (position) {
       // console.log(position)
-      this.isShowBackTop = -position.y > 1000
+      this.isShowBackTop = (-position.y) > 1000
+      // 判断tab是否吸顶
+      this.isTabFixed = (-position.y) > this.tabControlOffsetTop
     },
     loadMore () {
       // console.log('loadMore')
       this.getHomeGoods1(this.currentType)
+    },
+    swiperImgLoad () {
+      this.tabControlOffsetTop = this.$refs.tabControl.$el.offsetTop
     },
     getHomeMultidata1 () {
       getHomeMultidata().then((res) => {
@@ -120,6 +132,15 @@ export default {
     // this.getHomeGoods1('sell')
     // this.getHomeGoods1('new')
   },
+  destroyed () {
+    console.log('home destroyed')
+  },
+  activated () {
+    this.$refs.scroll.scrollTo(0, this.saveY, 0)
+  },
+  deactivated () {
+    this.saveY = this.$refs.scroll.getScrollY()
+  }
   mounted () {
     // 监听图片加载完成
     this.$bus.$on('itemImageLoad', () => {
@@ -129,21 +150,20 @@ export default {
 }
 </script>
 <style scoped>
-#home {
-  padding-top: 44px;
-}
 .home-nav {
   background-color: var(--color-tint);
   color: #fff;
+}
+/* .Fixed {
   position: fixed;
   left: 0;
-  top: 0;
   right: 0;
-  z-index: 9;
-}
-.tab-control {
-  position: sticky;
   top: 44px;
+} */
+.tab-control2 {
+  position: relative;
+  z-index: 9;
+  background-color: #fff;
 }
 ul.list {
   margin-bottom: 55px;
