@@ -42,7 +42,7 @@ export default {
     // 3.上拉加载更多
     if (this.pullUpLoad) {
       this.scroll.on('pullingUp', () => {
-        console.log('pullingUp')
+        // console.log('pullingUp')
         this.$emit('pullingUp')
       })
     }

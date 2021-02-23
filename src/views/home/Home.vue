@@ -2,13 +2,13 @@
   <div id="home">
     <NavBar class="home-nav"><template v-slot:center><div>购物街</div></template></NavBar>
     <Scroll class="content" ref="scroll" :probe-type="3"
-      @scroll="contentScroll" :pull-up-load="true" @pulling-up="loadMore">
+      @scroll="contentScroll" :pull-up-load="true" @pullingUp="loadMore">
       <HomeSwiper :banners="banners" />
       <RecommendView :recommends="recommends"/>
       <FeatureView/>
       <TabControl class="tab-control"
           @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
-      <goods-list :goods="goods[currentType].list[0]"/>
+      <goods-list :goods="goods[currentType].list"/>
       <ul class="list">
         <li>3333333333333</li>
         <li>3333333333333</li>
@@ -89,7 +89,7 @@ export default {
       this.isShowBackTop = -position.y > 1000
     },
     loadMore () {
-      console.log('loadMore')
+      // console.log('loadMore')
       this.getHomeGoods1(this.currentType)
     },
     getHomeMultidata1 () {
@@ -101,9 +101,14 @@ export default {
     getHomeGoods1 (type) {
       const page = this.goods[type].page + 1
       getHomeGoods(type, page).then((res) => {
+        // console.log(res)
         const data = res.list[0].result.wall.docs
-        // console.log(typeof data, data)
-        this.goods[type].list.push(data)
+        for (const iterator of data) {
+          this.goods[type].list.push(iterator)
+        }
+        // let fruitsObj = {...data}
+        // this.goods[type].list.push(data)
+        // console.log(typeof data, this.goods[type])
         this.goods[type].page += 1
         // 完成上拉加载更多
         this.$refs.scroll.finishPullUp()
@@ -115,8 +120,8 @@ export default {
     this.getHomeMultidata1()
     // 请求商品数据
     this.getHomeGoods1('pop')
-    this.getHomeGoods1('sell')
-    this.getHomeGoods1('new')
+    // this.getHomeGoods1('sell')
+    // this.getHomeGoods1('new')
   },
   mounted () {
     // 监听图片加载完成
