@@ -2,25 +2,25 @@
   <div id="home">
     <NavBar class="home-nav"><template v-slot:center><div>购物街</div></template></NavBar>
     <Scroll class="content" ref="scroll" :probe-type="3"
-      @scroll="contentScroll">
+      @scroll="contentScroll" :pull-up-load="true" @pulling-up="loadMore">
       <HomeSwiper :banners="banners" />
       <RecommendView :recommends="recommends"/>
       <FeatureView/>
       <TabControl class="tab-control"
           @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
       <goods-list :goods="goods[currentType].list[0]"/>
+      <ul class="list">
+        <li>3333333333333</li>
+        <li>3333333333333</li>
+        <li>3333333333333</li>
+        <li>3333333333333</li>
+        <li>3333333333333</li>
+        <li>3333333333333</li>
+        <li>3333333333333</li>
+        <li>3333333333333</li>
+      </ul>
     </Scroll>
     <back-top @click.native="backClick" v-show="isShowBackTop"/>
-    <ul class="list">
-      <li>3333333333333</li>
-      <li>3333333333333</li>
-      <li>3333333333333</li>
-      <li>3333333333333</li>
-      <li>3333333333333</li>
-      <li>3333333333333</li>
-      <li>3333333333333</li>
-      <li>3333333333333</li>
-    </ul>
   </div>
 </template>
 
@@ -36,6 +36,8 @@ import RecommendView from './childComp/RecommendView'
 import FeatureView from './childComp/FeatureView'
 
 import { getHomeMultidata, getHomeGoods } from '@/network/home'
+import { debounce } from '@/common/utils'
+
 export default {
   name: 'Home',
   components: {
@@ -79,11 +81,16 @@ export default {
       this.getHomeGoods1(this.currentType)
     },
     backClick () {
-      console.log('backClick')
+      // console.log('backClick')
       this.$refs.scroll.scrollTo(0, 0)
     },
     contentScroll (position) {
+      // console.log(position)
       this.isShowBackTop = -position.y > 1000
+    },
+    loadMore () {
+      console.log('loadMore')
+      this.getHomeGoods1(this.currentType)
     },
     getHomeMultidata1 () {
       getHomeMultidata().then((res) => {
@@ -98,6 +105,8 @@ export default {
         // console.log(typeof data, data)
         this.goods[type].list.push(data)
         this.goods[type].page += 1
+        // 完成上拉加载更多
+        this.$refs.scroll.finishPullUp()
       })
     }
   },
@@ -106,6 +115,14 @@ export default {
     this.getHomeMultidata1()
     // 请求商品数据
     this.getHomeGoods1('pop')
+    this.getHomeGoods1('sell')
+    this.getHomeGoods1('new')
+  },
+  mounted () {
+    // 监听图片加载完成
+    this.$bus.$on('itemImageLoad', () => {
+      debounce(this.$refs.scroll.refresh())
+    })
   }
 }
 </script>
@@ -130,7 +147,7 @@ ul.list {
   margin-bottom: 55px;
 }
 .content {
-  height: calc(100% - 93px);
+  height: calc(100vh - 93px);
   overflow: hidden;
 }
 </style>
