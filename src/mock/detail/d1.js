@@ -1,0 +1,713 @@
+export const d1 = {
+  api: 'http.detail.api',
+  v: '1',
+  ret: 'SUCCESS',
+  data: {
+    status: {
+      code: 1001,
+      msg: ''
+    },
+    result: {
+      detailInfo: {
+        detailImage: [{
+          list: ['https://s5.mogucdn.com/mlcdn/55cf19/200616_11kie0364i820i806e2jla9a73cik_750x1201.jpg', 'https://s11.mogucdn.com/mlcdn/55cf19/200616_37414bh5d8gic3k8bdk9ecke83ckf_750x1144.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_6396f65b9biacd8h07115a767g8ic_640x960.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_10fflh2h773h42dgdk275lclg1l7k_750x1736.jpg', 'https://s11.mogucdn.com/mlcdn/55cf19/200616_3k8i3h87bl0f9074gh0hd6akk0llg_750x800.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_5gfea41k01c7f27fh20cchi8bj7g4_750x1800.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_68c93glgeh7aha89bfle9ih142k7f_700x1500.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_20j471lc1bebcd4hjji8988kf0aj3_750x1483.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_09kfk6klcda8kj66felfllcb501i8_970x2090.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_5cj3lab3lc489fkg8ejfd2jj5flbb_750x1600.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_1bfki0cd4c9dhgk661fg3djg86h80_970x2667.jpg', 'https://s11.mogucdn.com/mlcdn/55cf19/200616_05gg45b9ke6h9fg914li5f685033h_750x800.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_4ka94i08eg28aai8fad8eddlkcle1_750x1600.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_4a9fj025ab3a7a675ihk691f3g6g8_750x1804.jpg', 'https://s5.mogucdn.com/mlcdn/55cf19/200616_303j72fdfada9c70ifh61kigg3j95_750x1667.jpg', 'https://s5.mogucdn.com/mlcdn/c45406/200617_25jhki4lg1ica3h4a7l9ai8c0ge78_751x755.png', 'https://s11.mogucdn.com/mlcdn/c024f5/190417_2d51ljj2a42lddkg49ibag494g3ca_1125x540.png'],
+          key: '图文详情',
+          anchor: 'detail_info'
+        }],
+        splitDetailImage: true,
+        desc: '本店所有商品都赠送运费险。欢迎选购，菇凉可以通过身高体重咨询客服，客服会给您推荐合适的号码'
+      },
+      liveInfo: {},
+      officialSelect: {
+        _extra_control_hide_: true
+      },
+      rateInfo: {
+        sales: 1186,
+        list: [{
+          user: {
+            uname: '萌小小敏',
+            avatar: 'https://s11.mogucdn.com/mlcdn/c45406/200908_0g91ehad14909fig5djbiafd2cggl_400x400.jpg',
+            profileUrl: ''
+          },
+          rateId: '11ben5du',
+          created: 1601367835,
+          style: '颜色:黑色 尺码:均码 ',
+          canExplain: false,
+          isBuyerShow: false,
+          content: '可以',
+          isAnonymous: 0,
+          isEmpty: 1,
+          level: ''
+        }, {
+          isEmpty: 1,
+          level: '',
+          user: {
+            uname: 'wx_68wiiacd0x96m',
+            avatar: 'https://s5.mogucdn.com/mlcdn/5abf39/190225_0ide4l92h652ff6legg6i180lcl2a_132x132.jpg',
+            profileUrl: ''
+          },
+          rateId: '11bi890i',
+          content: '面料挺好的打底穿价钱也便宜',
+          isAnonymous: 0,
+          style: '颜色:白色 尺码:均码 ',
+          created: 1602866122,
+          canExplain: false,
+          isBuyerShow: false
+        }],
+        cRate: 195,
+        imgTotal: 4,
+        rateTags: [{
+          num: 4,
+          labelId: 0,
+          emotion: 'positive',
+          property: '图片',
+          value: '有图片'
+        }, {
+          emotion: 'positive',
+          property: 'rateLabel',
+          value: '没有色差',
+          num: 20,
+          labelId: 13
+        }, {
+          emotion: 'positive',
+          property: 'rateLabel',
+          value: '图片描述一致',
+          num: 17,
+          labelId: 15
+        }, {
+          emotion: 'positive',
+          property: 'rateLabel',
+          value: '款式好看',
+          num: 17,
+          labelId: 12
+        }, {
+          property: 'rateLabel',
+          value: '上身效果好',
+          num: 16,
+          labelId: 11,
+          emotion: 'positive'
+        }, {
+          emotion: 'positive',
+          property: 'rateLabel',
+          value: '没有气味',
+          num: 14,
+          labelId: 9
+        }]
+      },
+      itemInfo: {
+        isShareIntegral: false,
+        state: 0,
+        lowNowPrice: '29.90',
+        nowTime: 1614132524,
+        isFaved: false,
+        saleType: 0,
+        seo: {
+          seo_noindex: '0',
+          title: '【无袖上衣冰丝针织衫女小吊带背心女夏内搭短款性感外穿修身打底衫】-女装-上装_女装_背心吊带_服饰鞋包-萍萍的私人衣橱-蘑菇街优店',
+          keywords: '无袖上衣冰丝针织衫女小吊带背心女夏内搭短款性感外穿修身打底衫',
+          wap_url: '//m.mogujie.com/x6/detail/1mu76te',
+          description: '来自蘑菇街优店上装_女装_背心吊带_服饰鞋包家本店所有商品都赠送运费险。欢迎选购，菇凉可以通过身高体重咨询客服，客服会给您推荐合适的号码的无袖上衣冰丝针织衫女小吊带背心女夏内搭短款性感外穿修身打底衫，发现当季女装和萍萍的私人衣橱搭配心得。',
+          alternate: '//m.mogujie.com/x6/detail/1mu76te',
+          links: 'null',
+          canonical: '//shop.mogujie.com/detail/1mu76te'
+        },
+        highPrice: '71.42',
+        canApplyInstallment: false,
+        highNowPrice: '49.99',
+        titleTags: [],
+        titleTagsV2: [],
+        picTags: [],
+        cFav: 2128,
+        video: {
+          cover: 'https://s11.mogucdn.com/mlcdn/c45406/200617_48648d39bkc4lh6gci98f7k62e01a_750x750.jpg',
+          videoId: 2981100,
+          width: 1280,
+          height: 726
+        },
+        inSpringFestival: false,
+        limitDiscountInfo: {},
+        desc: '本店所有商品都赠送运费险。欢迎选购，菇凉可以通过身高体重咨询客服，客服会给您推荐合适的号码',
+        saleStartTime: 0,
+        virtualItemType: 0,
+        isVirtualItem: false,
+        priceChannel: 0,
+        isMedicalBeautyVirtualItem: false,
+        contain30DayDeliveryService: false,
+        extra: {
+          userRecvAddressInfo: {
+            province: '北京市'
+          },
+          express: '全国包邮',
+          address: '广东广州',
+          onSaleTime: 0,
+          isLiveSeckill: false,
+          sales: 1186,
+          recvAddress: '北京',
+          isFreePost: true,
+          buyerInfoList: [{
+            logo: 'https://s5.mogucdn.com/mlcdn/c45406/201106_4bb70j2j80jbjfg4d56cd7agiiblf_400x400.jpg',
+            desc: 'EndureRita下单成功'
+          }, {
+            logo: 'https://s11.mogucdn.com/mlcdn/5abf39/190903_48i34h8deb439ai163ab91fbjl0a9_132x132.jpg',
+            desc: '方垛2003下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/mlcdn/5abf39/200614_12khcid6bjg4i4l897i8808777efi_132x132.jpg',
+            desc: '闲云野鹤tb64hl下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/mlcdn/5abf39/170711_7e4e9lehl5h39k4h20jc5lb69c3b2_1280x1280.jpg',
+            desc: 'weixin_oidxodwbnepp3下单成功'
+          }, {
+            logo: 'https://s11.mogucdn.com/b7/avatar/140514/iagwk_kqzgyylil5bgus2ugfjeg5sckzsew_400x400.jpg',
+            desc: 'XIAO小小太阳下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/p1/160625/upload_ie4tcojsgzqtazjvhezdambqgqyde_640x640.jpg',
+            desc: '贝贝sunRose下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/new1/v1/bdefaultavatar/03.jpg',
+            desc: '你一值得拥有下单成功'
+          }, {
+            desc: 'wx_sncz7yg904pea下单成功',
+            logo: 'https://s11.mogucdn.com/mlcdn/5abf39/180223_455acdg63352f7kfj3c4dbkk08f75_960x960.jpg'
+          }, {
+            logo: 'https://s5.mogucdn.com/mlcdn/5abf39/181121_0baeb7ccjb1c284i8hd814a35c9k2_132x132.jpg',
+            desc: 'wx_wrmlpblr40dzr下单成功'
+          }, {
+            desc: '你陪我一程我念201909下单成功',
+            logo: 'https://s11.mogucdn.com/mlcdn/5abf39/190115_7b2f0jc8ia207daclfbbfedicada7_132x132.jpg'
+          }, {
+            logo: 'https://s5.mogucdn.com/mlcdn/5abf39/210220_31lifh5l3i80fj42eidl14dded30a_132x132.jpg',
+            desc: '梦露202102下单成功'
+          }, {
+            logo: 'https://s11.mogucdn.com/mlcdn/5abf39/190205_701l5l6a2hb7h21af9l8cd1jj3j37_132x132.jpg',
+            desc: 'SuperMaryElla下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/mlcdn/c45406/200927_6gc6dagfa935dca6h4k88d29le40f_368x368.jpg',
+            desc: '倾城199529下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/mlcdn/5abf39/190717_2l4gfk41jecg9c41a200i8912d0j7_132x132.jpg',
+            desc: 'A莫言200704下单成功'
+          }, {
+            logo: 'https://s11.mogucdn.com/mlcdn/5abf39/170906_3hc7ceci1l85a66b1aagfa6a4la5e_640x640.jpg',
+            desc: '我的男神叫郑恺Mary下单成功'
+          }, {
+            logo: 'https://s11.mogucdn.com/new1/v1/bdefaultavatar/05.jpg',
+            desc: '零度柠檬下单成功'
+          }, {
+            logo: 'https://s11.mogucdn.com/p2/160827/upload_5h9526e72d1246544e31f3h560ik1_640x640.jpg',
+            desc: '初晴半夏Lena下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/mlcdn/5abf39/200922_3f1d6ke8i00cdd97e1d74jk1k043f_132x132.jpg',
+            desc: '张宇鸿2020下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/new1/v1/bdefaultavatar/02.jpg',
+            desc: 'icewinterlin下单成功'
+          }, {
+            logo: 'https://s5.mogucdn.com/mlcdn/5abf39/170429_4dg1djd4lh2ei0ga5albekkk9k84a_640x640.jpg',
+            desc: 'weixin_0rdgtjpzk51bc下单成功'
+          }]
+        },
+        lowPrice: '42.72',
+        title: '无袖上衣冰丝针织衫女小吊带背心女夏内搭短款性感外穿修身打底衫',
+        isVirtualCouponItem: false,
+        isSpringFestivalShutdownItem: false,
+        officialRecommend: {},
+        pickforme: {
+          icon: 'https://s10.mogucdn.com/mlcdn/c45406/191218_762ibk3def84blec68cbe4le770df_54x54.png',
+          link: 'https://h5.mogu.com/pickforme/launch/index.html?itemId=1mu76te&acm=3.mce.1_10_1nh28.143035.0.euZfJspTFzvGq.pos_0-m_547572-sd_119',
+          acm: '3.mce.1_10_1nh28.143035.0.euZfJspTFzvGq.pos_0-m_547572-sd_119',
+          name: '帮我选'
+        },
+        itemId: '1mu76te',
+        type: 8,
+        isJdItem: false
+      },
+      platformCoupons: {
+        bonusCount: 0,
+        isBonusItem: false
+      },
+      priceInfo: {
+        oldPrice: '42.72起',
+        priceSplit: '~',
+        prePriceTag: {
+          bgColor: '#FFE8EE',
+          textColor: '#FF2255'
+        },
+        priceTags: [{
+          text: '7折',
+          bgColor: '#FFE8EE',
+          textColor: '#FF2255'
+        }],
+        eventTags: [],
+        mobilePrice: '',
+        extraDesc: '',
+        highNowPrice: '49.99',
+        priceColor: '#333333',
+        eventPriceColor: '#FF2255',
+        mobileDownloadLink: '',
+        nowPrice: '29.90',
+        currency: '¥',
+        eventPrice: '',
+        eventPriceDesc: {
+          bgColor: '#FFE8EE',
+          textColor: '#FF2255'
+        },
+        eventDesc: ''
+      },
+      itemServices: {
+        services: [{
+          name: '7天无理由退货',
+          icon: 'https://s10.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          content: '物流签收后7天内买家可无理由退货，需满足退货条件',
+          link: 'https://www.mogu.com/rule/mogu?categoryId=326&ruleId=892'
+        }, {
+          name: '延误必赔',
+          icon: 'https://s10.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          content: '极速发货、送货保障，若发货时间晚于商家承诺时间或快递派送时间晚于平台标准，可获得延误补贴。'
+        }, {
+          icon: 'https://s10.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          content: '用户发起退货且绑定提现银行卡，可获6-18元运费补贴',
+          link: 'https://www.mogu.com/rule/mogu?categoryId=326&ruleId=927',
+          name: '退货补运费'
+        }, {
+          icon: 'https://s10.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          content: '',
+          link: 'https://www.mogu.com/rule/mogu?categoryId=326&ruleId=895',
+          name: '全国包邮'
+        }],
+        columns: [{
+          name: 'sales',
+          desc: '销量 1186',
+          icon: 'https://s10.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png'
+        }, {
+          icon: 'https://s10.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          name: 'express',
+          desc: '免邮费'
+        }, {
+          icon: 'https://s10.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          name: 'address',
+          desc: '广东广州'
+        }]
+      },
+      skuInfo: {
+        skus: [{
+          stockId: '11ex53z0',
+          price: 4272,
+          color: '#fffef8',
+          sizeId: 100,
+          nowprice: 2990,
+          img: 'https://s11.mogucdn.com/mlcdn/55cf19/200616_07jeki1l046lbh3id5j6218j0k94h_750x750.jpg',
+          style: '白色',
+          size: '均码',
+          styleId: 1,
+          xdSkuId: '11ex53z0',
+          currency: '¥',
+          stock: 335,
+          delayHours: 48,
+          insuranceMap: {
+            10: [{
+              skuId: 1539487250,
+              actualPrice: 2990,
+              insuranceCode: 10,
+              insurancePrice: 150,
+              sellerUserId: 442921819
+            }]
+          }
+        }, {
+          xdSkuId: '11ex53z8',
+          img: 'https://s5.mogucdn.com/mlcdn/55cf19/200616_74ki77ii9ea7d639jbeb7bbg70chj_750x750.jpg',
+          stock: 283,
+          nowprice: 2990,
+          insuranceMap: {
+            10: [{
+              insurancePrice: 150,
+              sellerUserId: 442921819,
+              skuId: 1539487254,
+              actualPrice: 2990,
+              insuranceCode: 10
+            }]
+          },
+          style: '黑色',
+          delayHours: 48,
+          stockId: '11ex53z8',
+          price: 4272,
+          currency: '¥',
+          sizeId: 100,
+          color: '#000000',
+          size: '均码',
+          styleId: 2
+        }, {
+          xdSkuId: '11ex53z2',
+          price: 4272,
+          img: 'https://s5.mogucdn.com/mlcdn/55cf19/200616_87cbh1djj573091ekecf6877gk4dh_750x750.jpg',
+          delayHours: 48,
+          insuranceMap: {
+            10: [{
+              insurancePrice: 150,
+              sellerUserId: 442921819,
+              skuId: 1539487251,
+              actualPrice: 2990,
+              insuranceCode: 10
+            }]
+          },
+          stockId: '11ex53z2',
+          style: '紫色',
+          color: '#800080',
+          nowprice: 2990,
+          size: '均码',
+          styleId: 3,
+          sizeId: 100,
+          currency: '¥',
+          stock: 481
+        }, {
+          stockId: '11ex53z6',
+          img: 'https://s5.mogucdn.com/mlcdn/55cf19/200616_16a0ij0k18i6d2f38ekagj710efg5_750x750.jpg',
+          stock: 475,
+          sizeId: 100,
+          price: 4272,
+          style: '卡其色',
+          styleId: 4,
+          delayHours: 48,
+          nowprice: 2990,
+          currency: '¥',
+          insuranceMap: {
+            10: [{
+              skuId: 1539487253,
+              actualPrice: 2990,
+              insuranceCode: 10,
+              insurancePrice: 150,
+              sellerUserId: 442921819
+            }]
+          },
+          xdSkuId: '11ex53z6',
+          color: '#c3b091',
+          size: '均码'
+        }, {
+          stock: 445,
+          styleId: 5,
+          xdSkuId: '11ex53z4',
+          price: 4272,
+          nowprice: 2990,
+          color: '',
+          sizeId: 100,
+          delayHours: 48,
+          insuranceMap: {
+            10: [{
+              skuId: 1539487252,
+              actualPrice: 2990,
+              insuranceCode: 10,
+              insurancePrice: 150,
+              sellerUserId: 442921819
+            }]
+          },
+          stockId: '11ex53z4',
+          size: '均码',
+          currency: '¥',
+          style: '果绿色',
+          img: 'https://s5.mogucdn.com/mlcdn/55cf19/200616_6eeag4fce2a25a74ge59gl761j3dk_750x750.jpg'
+        }, {
+          nowprice: 4999,
+          img: 'https://s5.mogucdn.com/mlcdn/c45406/200617_4433c4keid9ijkg8df5d7h532dale_800x800.jpg',
+          style: '组合更划算',
+          styleId: 6,
+          sizeId: 100,
+          insuranceMap: {
+            10: [{
+              skuId: 1539672226,
+              actualPrice: 4999,
+              insuranceCode: 10,
+              insurancePrice: 250,
+              sellerUserId: 442921819
+            }]
+          },
+          stockId: '11exd1fg',
+          price: 7142,
+          stock: 411,
+          color: '',
+          size: '均码',
+          xdSkuId: '11exd1fg',
+          currency: '¥'
+        }],
+        sizeKey: '尺码',
+        img: 'https://s5.mogucdn.com/mlcdn/c45406/200617_7ci5e6499h2afgh3fe1cl01dlg58d_3999x5999.jpg',
+        title: '无袖上衣冰丝针织衫女小吊带背心女夏内搭短款性感外穿修身打底衫',
+        props: [{
+          list: [{
+            default: false,
+            styleId: 1,
+            name: '白色',
+            index: 1,
+            type: 'style'
+          }, {
+            index: 2,
+            type: 'style',
+            default: false,
+            styleId: 2,
+            name: '黑色'
+          }, {
+            type: 'style',
+            default: false,
+            styleId: 3,
+            name: '紫色',
+            index: 3
+          }, {
+            default: false,
+            styleId: 4,
+            name: '卡其色',
+            index: 4,
+            type: 'style'
+          }, {
+            default: false,
+            styleId: 5,
+            name: '果绿色',
+            index: 5,
+            type: 'style'
+          }, {
+            default: false,
+            styleId: 6,
+            name: '组合更划算',
+            index: 6,
+            type: 'style'
+          }],
+          isDefault: false,
+          label: '颜色'
+        }, {
+          label: '尺码',
+          list: [{
+            default: false,
+            name: '均码',
+            index: 100,
+            type: 'size',
+            sizeId: 100
+          }],
+          isDefault: false
+        }],
+        styleKey: '颜色',
+        priceRange: '¥29.90~¥49.99',
+        defaultPrice: '¥29.90~¥49.99',
+        totalStock: 2430,
+        canInstallment: false,
+        itemId: '1mu76te',
+        isJdItem: false,
+        addressInfo: {}
+      },
+      userInfo: {
+        isLogin: false,
+        isSelf: false,
+        admin: false,
+        shopId: '14r12',
+        sellerId: '12ggxmq',
+        userId: '12ggxmq'
+      },
+      rateLookInfo: {},
+      diamondInfo: {
+        priceTitle: '限时优惠',
+        arrowTitle: '豪华黄钻专享价',
+        diamondPrice: '29.90',
+        normalPrice: '29.90',
+        state: 3,
+        currency: '¥',
+        backgroundImage: 'https://s11.mogucdn.com/mlcdn/c45406/170728_2740cc0db684ccfg34i2323gak715_751x81.png'
+      },
+      normalCountdown: {
+        image: '',
+        priceColor: '#FFFFFF',
+        activityBanner: '',
+        activityBannerLink: '',
+        text: '',
+        isPriceShow: false,
+        isWarmUp: false,
+        countdown: 0,
+        titleIcon: '',
+        isHideRightCountdown: false,
+        nowTime: 1614132524,
+        businessType: '',
+        titleColor: '#FFFFFF',
+        isCountdomShow: true
+      },
+      topImages: ['https://s5.mogucdn.com/mlcdn/c45406/200617_7ci5e6499h2afgh3fe1cl01dlg58d_3999x5999.jpg', 'https://s5.mogucdn.com/mlcdn/c45406/200617_6bb7fkf963ik3klj2e4hk6ffhd29i_3999x5999.jpg', 'https://s11.mogucdn.com/mlcdn/c45406/200617_8b7917gik0gi5jd3914abelicce1i_3999x5999.jpg', 'https://s11.mogucdn.com/mlcdn/c45406/200617_0ha5h3h9akhh7hb25ckga86h8f4ek_3999x5999.jpg', 'https://s11.mogucdn.com/mlcdn/c45406/200617_28709e7h81c1g1f8850ie13b8f859_3999x5999.jpg'],
+      normalShareInfo: {
+        url: '//h5.mogu.com/detail-normal/index.html?itemId=1mu76te&from=share',
+        imageUrl: 'https://s5.mogucdn.com/mlcdn/c45406/200617_7ci5e6499h2afgh3fe1cl01dlg58d_3999x5999.jpg',
+        title: '无袖上衣冰丝针织衫女小吊带背心女夏内搭短款性感外穿修身打底衫',
+        content: '亲爱的～这件宝贝不错哦，快进来看看吧～'
+      },
+      saleTextInfo: {
+        name: 'slogan'
+      },
+      shopInfo: {
+        services: [{
+          icon: 'https://s11.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          name: '延误必赔',
+          desc: '极速发货、送货保障，若发货时间晚于商家承诺时间或快递派送时间晚于平台标准，可获得延误补贴。',
+          serviceDetailId: 1810,
+          serviceHeadId: 1800
+        }, {
+          icon: 'https://s11.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          name: '退货补运费',
+          link: 'https://www.mogu.com/rule/mogu?categoryId=326&ruleId=927',
+          desc: '用户发起退货且绑定提现银行卡，可获6-18元运费补贴',
+          serviceDetailId: 610,
+          serviceHeadId: 600
+        }, {
+          serviceDetailId: 310,
+          serviceHeadId: 300,
+          icon: 'https://s11.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          name: '全国包邮',
+          link: 'https://www.mogu.com/rule/mogu?categoryId=326&ruleId=895',
+          desc: ''
+        }, {
+          serviceDetailId: 110,
+          serviceHeadId: 100,
+          icon: 'https://s11.mogucdn.com/mlcdn/c45406/180417_25kbfg1c3hdbd120394ji4b11bk2k_36x36.png',
+          name: '7天无理由退货',
+          link: 'https://www.mogu.com/rule/mogu?categoryId=326&ruleId=892',
+          desc: '物流签收后7天内买家可无理由退货，需满足退货条件'
+        }],
+        isMarked: false,
+        saleDesc: '在架商品 ',
+        isHideShop: false,
+        cFans: '17033',
+        cGoods: 50,
+        shopLogo: 'https://s5.mogucdn.com/mlcdn/c45406/190423_7ik5lhblfh9hfii0a7g4hcgdg0g5b_200x200.jpg',
+        shopUrl: '//m.mogu.com/v8/meili/shop?shopid=14r12',
+        levelDescV2: '推荐指数',
+        dynShopLabels: [],
+        cSells: '13.1万',
+        userId: '12ggxmq',
+        name: '萍萍的私人衣橱',
+        type: 1,
+        saleDescV2: '在架商品 50',
+        shopLabels: [{
+          id: 201,
+          text: '1.7万人关注'
+        }, {
+          text: '累计销量13.0万+',
+          id: 303
+        }, {
+          text: '5年金招牌',
+          id: 601
+        }],
+        shopLabelPriority: '101,102,201,301,302,303,401,402,501,502,601,602',
+        score: [{
+          score: 4.83,
+          isBetter: true,
+          name: '描述相符'
+        }, {
+          name: '质量满意',
+          score: 4.83,
+          isBetter: true
+        }],
+        categories: [{
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381174',
+          name: '时尚套装'
+        }, {
+          name: '连衣裙',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381175'
+        }, {
+          name: '上装',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381176'
+        }, {
+          name: '下装',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381177'
+        }, {
+          name: 'T恤',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381178'
+        }, {
+          name: '衬衫',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381179'
+        }, {
+          name: '针织衫',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381180'
+        }, {
+          name: '雪纺衫',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381181'
+        }, {
+          name: '卫衣',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381182'
+        }, {
+          name: '打底裤',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381183'
+        }, {
+          name: '牛仔裤',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381184'
+        }, {
+          name: '半身裙',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381185'
+        }, {
+          name: '短裤',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381186'
+        }, {
+          name: '休闲裤',
+          link: 'http://shop.mogu.com/14r12/list/index?categoryId=20381187'
+        }],
+        shopId: '14r12',
+        level: 2
+      },
+      preSaleInfo: '',
+      countdownInfo: {
+        nowTime: 1614132524,
+        activityBannerLink: '',
+        isPriceShow: false,
+        isCountdomShow: true,
+        countdown: 0,
+        image: '',
+        priceColor: '#FFFFFF',
+        titleIcon: '',
+        text: '',
+        businessType: 'NORMAL',
+        isWarmUp: false,
+        titleColor: '#FFFFFF',
+        activityBanner: '',
+        isHideRightCountdown: false
+      },
+      itemParams: {
+        info: {
+          set: {
+            款式: '吊带',
+            尺码: '均码',
+            衣长: '短款（41-50cm）',
+            版型: '直身',
+            潮流: '韩系',
+            颜色: '黑色,紫色,白色,果绿色,卡其色,组合更划算',
+            材质: '针织',
+            领型: '其他领型',
+            风格: '性感',
+            图案: '纯色',
+            季节: '夏季'
+          },
+          key: '产品参数',
+          anchor: 'product_info'
+        }
+      },
+      normalPrice: {
+        oldPrice: '42.72起',
+        eventPriceColor: '#FF2255',
+        eventTags: [],
+        eventDesc: '',
+        nowPrice: '29.90',
+        priceTags: [{
+          text: '7折',
+          bgColor: '#FFE8EE',
+          textColor: '#FF2255'
+        }],
+        prePriceTag: {
+          bgColor: '#FFE8EE',
+          textColor: '#FF2255'
+        },
+        mobileDownloadLink: '',
+        priceSplit: '~',
+        currency: '¥',
+        eventPrice: '',
+        mobilePrice: '',
+        extraDesc: '',
+        highNowPrice: '49.99',
+        priceColor: '#333333',
+        eventPriceDesc: {
+          bgColor: '#FFE8EE',
+          textColor: '#FF2255'
+        }
+      }
+    }
+  },
+  needHeaderCookie: false
+}

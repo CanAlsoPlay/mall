@@ -1,2 +1,3 @@
 import Goods from './home/Goods'
-console.log('mockjs', Goods)
+import Detail from './detail/detail'
+console.log('mockjs', Goods, Detail)
