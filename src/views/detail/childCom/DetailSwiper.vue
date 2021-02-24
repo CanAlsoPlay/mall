@@ -1,7 +1,9 @@
 <template>
-  <swiper class="detail-swiper">
+  <swiper style="overflow: visible" class="detail-swiper">
     <swiper-item v-for="(item, index) in topImages" :key="index">
-      <img class="swiper-img" :src="item" alt="">
+      <div class="img-item">
+        <img class="swiper-img" :src="item" alt="">
+      </div>
     </swiper-item>
   </swiper>
 </template>
@@ -35,15 +37,16 @@ export default {
 
 <style scoped>
 .detail-swiper {
-  width: 280px;
-  overflow: hidden;
+  width: 240px;
   margin: 0 auto;
 }
-.swiper-item {
-  width: 100%;
+.img-item {
+  width: 260px;
+  background-color: #fff;
+  padding: 0 10px;
 }
 .swiper-img {
-  width: 280px;
-  height: 420px;
+  width: 240px;
+  height: 360px;
 }
 </style>
