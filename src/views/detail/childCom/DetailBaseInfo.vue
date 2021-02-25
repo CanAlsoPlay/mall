@@ -70,7 +70,7 @@ export default {
   margin-top: 10px;
   display: flex;
 }
-.info-other span {
+.info-other span:not(:last-child) {
   flex: 1;
 }
 </style>
