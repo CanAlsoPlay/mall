@@ -11,16 +11,6 @@
       <TabControl class="tab-control" ref="tabControl"
           @tabClick="tabClick" :titles="['综合', '销量', '新品']" />
       <goods-list :goods="goods[currentType].list"/>
-      <ul class="list">
-        <li>3333333333333</li>
-        <li>3333333333333</li>
-        <li>3333333333333</li>
-        <li>3333333333333</li>
-        <li>3333333333333</li>
-        <li>3333333333333</li>
-        <li>3333333333333</li>
-        <li>3333333333333</li>
-      </ul>
     </Scroll>
     <back-top @click.native="backClick" v-show="isShowBackTop"/>
   </div>

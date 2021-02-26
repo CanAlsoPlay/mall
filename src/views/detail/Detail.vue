@@ -1,36 +1,32 @@
 <template>
   <div id="detail">
-    <detail-nav-bar/>
-    <detail-swiper :topImages="topImgs"/>
-    <detail-base-info :goods="itemInfo"
-      :diamondInfo="diamondInfo" :priceInfo="priceInfo"/>
-    <detail-shop :shopInfo="shopInfo" />
-    <detail-img-info :imgInfo="detailInfo" />
-    <detail-params-info :paramsInfo="paramsInfo" />
-    <ul>
-      <li>111</li>
-      <li>111</li>
-      <li>111</li>
-      <li>111</li>
-      <li>111</li>
-      <li>111</li>
-      <li>111</li>
-      <li>111</li>
-      <li>111</li>
-      <li>111</li>
-    </ul>
+    <scroll>
+      <detail-nav-bar/>
+      <detail-swiper :topImages="topImgs"/>
+      <detail-base-info :goods="itemInfo"
+        :diamondInfo="diamondInfo" :priceInfo="priceInfo"/>
+      <detail-shop :shopInfo="shopInfo" />
+      <detail-img-info :imgInfo="detailInfo" />
+      <detail-params-info :paramsInfo="paramsInfo" />
+      <detail-comment-info :commentInfo="commentInfo"/>
+      <goods-list :goods="recommends"/>
+    </scroll>
   </div>
 </template>
 
 <script>
+import Scroll from '@/components/common/scroll/Scroll.vue'
+
 import DetailNavBar from './childCom/DetailNavBar'
 import DetailSwiper from './childCom/DetailSwiper'
 import DetailBaseInfo from './childCom/DetailBaseInfo.vue'
 import DetailShop from './childCom/DetailShop'
 import DetailImgInfo from './childCom/DetailImgInfo'
 import DetailParamsInfo from './childCom/DetailParamsInfo'
+import DetailCommentInfo from './childCom/DetailCommentInfo'
+import GoodsList from '@/components/content/goods/GoodsList.vue'
 
-import { getDetail } from '@/network/detail'
+import { getDetail, getRecommend } from '@/network/detail'
 
 export default {
   name: 'Detail',
@@ -43,7 +39,9 @@ export default {
       priceInfo: {},
       shopInfo: {},
       detailInfo: {},
-      paramsInfo: {}
+      paramsInfo: {},
+      commentInfo: {},
+      recommends: []
     }
   },
   components: {
@@ -52,10 +50,14 @@ export default {
     DetailBaseInfo,
     DetailShop,
     DetailImgInfo,
-    DetailParamsInfo
+    DetailParamsInfo,
+    DetailCommentInfo,
+    GoodsList,
+    Scroll
   },
   created () {
     this.id = this.$route.params.id
+    // 请求详情数据
     getDetail(this.id).then((res) => {
       const data = res.list[0].data.result
       this.topImgs = data.topImages
@@ -65,7 +67,18 @@ export default {
       this.shopInfo = data.shopInfo
       this.detailInfo = data.detailInfo
       this.paramsInfo = data.itemParams
-      console.log(data)
+      if (data.rateInfo.cRate !== null) {
+        this.commentInfo = data.rateInfo
+      }
+      console.log('getDetail', data)
+    })
+    // 请求推荐数据
+    getRecommend().then((res) => {
+      const data = res.list[0].data.list
+      for (const iterator of data) {
+        this.recommends.push(iterator)
+      }
+      console.log('getRecommend', this.recommends)
     })
   },
   methods: {
