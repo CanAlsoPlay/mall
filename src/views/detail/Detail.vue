@@ -1,7 +1,7 @@
 <template>
   <div id="detail">
+    <detail-nav-bar/>
     <scroll class="content" ref="scroll">
-      <detail-nav-bar/>
       <detail-swiper :topImages="topImgs"/>
       <detail-base-info :goods="itemInfo"
         :diamondInfo="diamondInfo" :priceInfo="priceInfo"/>
@@ -93,7 +93,7 @@ export default {
 
 <style scoped>
 .content {
-  height: calc(100vh - 49px);
+  height: calc(100vh - 93px);
   overflow: hidden;
 }
 </style>
