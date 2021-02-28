@@ -21,7 +21,6 @@ import NavBar from '@/components/common/navbar/NavBar.vue'
 import TabControl from '@/components/content/tabControl/TabControl.vue'
 import GoodsList from '@/components/content/goods/GoodsList.vue'
 import Scroll from '@/components/common/scroll/Scroll.vue'
-import BackTop from '@/components/content/backTop/BackTop.vue'
 
 import HomeSwiper from './childComp/HomeSwiper'
 import RecommendView from './childComp/RecommendView'
@@ -29,7 +28,7 @@ import FeatureView from './childComp/FeatureView'
 
 import { getHomeMultidata, getHomeGoods } from '@/network/home'
 // import { debounce } from '@/common/utils'
-import { itemListernerMixin } from '@/common/mixin'
+import { itemListernerMixin, backTopMixin } from '@/common/mixin'
 
 export default {
   name: 'Home',
@@ -40,8 +39,7 @@ export default {
     FeatureView,
     TabControl,
     GoodsList,
-    Scroll,
-    BackTop
+    Scroll
   },
   data () {
     return {
@@ -59,7 +57,7 @@ export default {
       saveY: 0
     }
   },
-  mixins: [itemListernerMixin],
+  mixins: [itemListernerMixin, backTopMixin],
   methods: {
     tabClick (index) {
       switch (index) {
@@ -78,10 +76,6 @@ export default {
       this.$refs.tabControl.currentIndex = index
       this.$refs.tabControl2.currentIndex = index
       this.getHomeGoods1(this.currentType)
-    },
-    backClick () {
-      // console.log('backClick')
-      this.$refs.scroll.scrollTo(0, 0)
     },
     contentScroll (position) {
       // console.log(position)

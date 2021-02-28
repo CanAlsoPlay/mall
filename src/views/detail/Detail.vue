@@ -12,12 +12,14 @@
       <detail-comment-info ref="comment" :commentInfo="commentInfo"/>
       <goods-list ref="recommend" :goods="recommends"/>
     </scroll>
+    <detail-bottom-bar @addCart="addToCart"/>
+    <back-top @click.native="backClick" v-show="isShowBackTop"/>
   </div>
 </template>
 
 <script>
 import Scroll from '@/components/common/scroll/Scroll.vue'
-import { itemListernerMixin } from '@/common/mixin'
+import { itemListernerMixin, backTopMixin } from '@/common/mixin'
 import { debounce } from '@/common/utils'
 
 import DetailNavBar from './childCom/DetailNavBar'
@@ -27,6 +29,7 @@ import DetailShop from './childCom/DetailShop'
 import DetailImgInfo from './childCom/DetailImgInfo'
 import DetailParamsInfo from './childCom/DetailParamsInfo'
 import DetailCommentInfo from './childCom/DetailCommentInfo'
+import DetailBottomBar from './childCom/DetailBottomBar'
 import GoodsList from '@/components/content/goods/GoodsList.vue'
 
 import { getDetail, getRecommend } from '@/network/detail'
@@ -57,10 +60,11 @@ export default {
     DetailImgInfo,
     DetailParamsInfo,
     DetailCommentInfo,
+    DetailBottomBar,
     GoodsList,
     Scroll
   },
-  mixins: [itemListernerMixin],
+  mixins: [itemListernerMixin, backTopMixin],
   created () {
     this.id = this.$route.params.id
     // 请求详情数据
@@ -112,6 +116,7 @@ export default {
       debounce(this.getThemeTopYs())
     },
     contentScroll (position) {
+      this.isShowBackTop = (-position.y) > 1000
       const posY = -position.y
       const length = this.themeTopYs.length
       for (let i = 0; i < length - 1; i++) {
@@ -122,6 +127,15 @@ export default {
           this.$refs.detailNav.currentIndex = this.currentIndex
         }
       }
+    },
+    addToCart () {
+      const product = {}
+      product.image = this.topImgs[0]
+      product.id = this.itemInfo.itemId
+      product.price = this.itemInfo.lowNowPrice
+      product.price = this.itemInfo.lowNowPrice
+      product.title = this.itemInfo.title
+      this.$store.dispatch('addToCart', product)
     }
   }
 }
