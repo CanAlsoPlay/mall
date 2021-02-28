@@ -7,10 +7,10 @@ export const itemListernerMixin = {
   },
   mounted () {
     this.itemImgListener = () => {
-      console.log(this.$refs.scroll.scroll.scrollerHeight)
+      // console.log(this.$refs.scroll.scroll.scrollerHeight)
       debounce(this.$refs.scroll.refresh())
     }
     this.$bus.$on('itemImageLoad', this.itemImgListener)
-    console.log('itemListernerMixin')
+    // console.log('itemListernerMixin')
   }
 }

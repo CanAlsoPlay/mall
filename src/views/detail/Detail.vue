@@ -1,15 +1,16 @@
 <template>
   <div id="detail">
-    <detail-nav-bar/>
-    <scroll class="content" ref="scroll">
+    <detail-nav-bar @titleClick="titleClick" ref="detailNav"/>
+    <scroll class="content" ref="scroll" :probe-type="3"
+      @scroll="contentScroll">
       <detail-swiper :topImages="topImgs"/>
       <detail-base-info :goods="itemInfo"
         :diamondInfo="diamondInfo" :priceInfo="priceInfo"/>
       <detail-shop :shopInfo="shopInfo" />
-      <detail-img-info :imgInfo="detailInfo" />
-      <detail-params-info :paramsInfo="paramsInfo" />
-      <detail-comment-info :commentInfo="commentInfo"/>
-      <goods-list :goods="recommends"/>
+      <detail-img-info @detailImgLoad="detailImageLoad" :imgInfo="detailInfo" />
+      <detail-params-info ref="params" :paramsInfo="paramsInfo" />
+      <detail-comment-info ref="comment" :commentInfo="commentInfo"/>
+      <goods-list ref="recommend" :goods="recommends"/>
     </scroll>
   </div>
 </template>
@@ -17,6 +18,7 @@
 <script>
 import Scroll from '@/components/common/scroll/Scroll.vue'
 import { itemListernerMixin } from '@/common/mixin'
+import { debounce } from '@/common/utils'
 
 import DetailNavBar from './childCom/DetailNavBar'
 import DetailSwiper from './childCom/DetailSwiper'
@@ -42,7 +44,9 @@ export default {
       detailInfo: {},
       paramsInfo: {},
       commentInfo: {},
-      recommends: []
+      recommends: [],
+      themeTopYs: [],
+      currentIndex: 0
     }
   },
   components: {
@@ -72,7 +76,7 @@ export default {
       if (data.rateInfo.cRate !== null) {
         this.commentInfo = data.rateInfo
       }
-      console.log('getDetail', data)
+      // console.log('getDetail', data)
     })
     // 请求推荐数据
     getRecommend().then((res) => {
@@ -80,13 +84,45 @@ export default {
       for (const iterator of data) {
         this.recommends.push(iterator)
       }
-      console.log('getRecommend', this.recommends)
+      // console.log('getRecommend', this.recommends)
     })
   },
   destroyed () {
     this.$bus.$off('itemImageLoad', this.itemImgListener)
   },
   methods: {
+    titleClick (index) {
+      this.$refs.scroll.scrollTo(0, -this.themeTopYs[index], 200)
+    },
+    getThemeTopYs () {
+      this.themeTopYs = []
+      this.themeTopYs.push('0')
+      if (this.$refs.params.$el.offsetTop === undefined) {
+        this.themeTopYs.push('360')
+      } else {
+        this.themeTopYs.push(this.$refs.params.$el.offsetTop)
+      }
+      this.themeTopYs.push(this.$refs.comment.$el.offsetTop)
+      this.themeTopYs.push(this.$refs.recommend.$el.offsetTop)
+      this.themeTopYs.push(Number.MAX_VALUE.toString())
+    },
+    detailImageLoad () {
+      // console.log('detailImageLoad')
+      debounce(this.$refs.scroll.refresh())
+      debounce(this.getThemeTopYs())
+    },
+    contentScroll (position) {
+      const posY = -position.y
+      const length = this.themeTopYs.length
+      for (let i = 0; i < length - 1; i++) {
+        if (this.currentIndex !== i &&
+          (posY > this.themeTopYs[i] &&
+          posY < this.themeTopYs[i + 1])) {
+          this.currentIndex = i
+          this.$refs.detailNav.currentIndex = this.currentIndex
+        }
+      }
+    }
   }
 }
 </script>
