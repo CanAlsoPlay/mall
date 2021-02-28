@@ -3,6 +3,7 @@
     <detail-nav-bar @titleClick="titleClick" ref="detailNav"/>
     <scroll class="content" ref="scroll" :probe-type="3"
       @scroll="contentScroll">
+      <div>{{this.$store.state}}</div>
       <detail-swiper :topImages="topImgs"/>
       <detail-base-info :goods="itemInfo"
         :diamondInfo="diamondInfo" :priceInfo="priceInfo"/>
@@ -132,7 +133,6 @@ export default {
       const product = {}
       product.image = this.topImgs[0]
       product.id = this.itemInfo.itemId
-      product.price = this.itemInfo.lowNowPrice
       product.price = this.itemInfo.lowNowPrice
       product.title = this.itemInfo.title
       this.$store.dispatch('addToCart', product)
