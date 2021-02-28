@@ -1,6 +1,6 @@
 <template>
   <div id="detail">
-    <scroll>
+    <scroll class="content" ref="scroll">
       <detail-nav-bar/>
       <detail-swiper :topImages="topImgs"/>
       <detail-base-info :goods="itemInfo"
@@ -16,6 +16,7 @@
 
 <script>
 import Scroll from '@/components/common/scroll/Scroll.vue'
+import { itemListernerMixin } from '@/common/mixin'
 
 import DetailNavBar from './childCom/DetailNavBar'
 import DetailSwiper from './childCom/DetailSwiper'
@@ -55,6 +56,7 @@ export default {
     GoodsList,
     Scroll
   },
+  mixins: [itemListernerMixin],
   created () {
     this.id = this.$route.params.id
     // 请求详情数据
@@ -81,10 +83,17 @@ export default {
       console.log('getRecommend', this.recommends)
     })
   },
+  destroyed () {
+    this.$bus.$off('itemImageLoad', this.itemImgListener)
+  },
   methods: {
   }
 }
 </script>
 
 <style scoped>
+.content {
+  height: calc(100vh - 49px);
+  overflow: hidden;
+}
 </style>

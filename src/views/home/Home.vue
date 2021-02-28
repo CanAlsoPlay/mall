@@ -28,7 +28,8 @@ import RecommendView from './childComp/RecommendView'
 import FeatureView from './childComp/FeatureView'
 
 import { getHomeMultidata, getHomeGoods } from '@/network/home'
-import { debounce } from '@/common/utils'
+// import { debounce } from '@/common/utils'
+import { itemListernerMixin } from '@/common/mixin'
 
 export default {
   name: 'Home',
@@ -58,6 +59,7 @@ export default {
       saveY: 0
     }
   },
+  mixins: [itemListernerMixin],
   methods: {
     tabClick (index) {
       switch (index) {
@@ -130,13 +132,18 @@ export default {
     this.$refs.scroll.refresh()
   },
   deactivated () {
+    // 1.保存y值
     this.saveY = this.$refs.scroll.getScrollY()
+    // 2.取消全局事件监听
+    this.$bus.$off('itemImageLoad', this.itemImgListener)
   },
   mounted () {
     // 监听图片加载完成
-    this.$bus.$on('itemImageLoad', () => {
-      debounce(this.$refs.scroll.refresh())
-    })
+    // 对监听的事件进行保存
+    // this.itemImgListener = () => {
+    //   debounce(this.$refs.scroll.refresh())
+    // }
+    // this.$bus.$on('itemImageLoad', this.itemImgListener)
   }
 }
 </script>
